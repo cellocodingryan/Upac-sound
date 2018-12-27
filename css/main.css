@@ -1,0 +1,18 @@
+/*
+page css for ALL Pages
+ */
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-flow: column;
+}
+body .page__ {
+    flex: 1 1 auto;
+}
+
+/*
+end styles of all pages (the box of pages)
+ */

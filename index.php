@@ -8,6 +8,10 @@ if (isset($_GET['do'])) {
 if (is_logged_in()) {
     echo '<h1>'. get_rcs() .'</h1>';
 }
+$current = "home";
+if (isset($_GET['component'])) {
+    $current = $_GET['component'];
+}
 
 ?>
 <!DOCTYPE html>
@@ -18,6 +22,7 @@ if (is_logged_in()) {
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/main.css">
 
 </head>
 <body>
@@ -25,16 +30,16 @@ if (is_logged_in()) {
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="index.php?component=home">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Services</a>
+                <a class="nav-link" href="index.php?component=services">Services</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">By Laws</a>
+                <a class="nav-link" href="index.php?component=bylaws">By Laws</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Submit Request</a>
+                <a class="nav-link" href="index.php?component=submit_request">Submit Request</a>
             </li>
         </ul>
     </div>
@@ -52,11 +57,19 @@ if (is_logged_in()) {
         </ul>
     </div>
 </nav>
-<article style="width: 90%;margin: 4% auto;">
-    <p>UPAC Sound is a Rensselaer Union-funded, student-run organization, providing live sound reinforcement for the RPI community.</p>
-    <p>If you are interested in becoming a member of UPAC Sound, please join us for one of our meetings. We meet biweekly on Mondays at 9PM in Union room 3202. Contact us to find out when the next meeting is.</p>
-    <p>If you have any questions, send us an e-mail at the address below!</p>
-</article>
+<div class="page__">
+<?php
+
+//include
+
+if (@include 'pages/'.$current . '.php') {
+
+} else {
+    include 'pages/home.php';
+}
+
+?>
+</div>
 
 <script src="js/bootstrap.bundle.js"></script>
 <script src="js/bootstrap.js"></script>
