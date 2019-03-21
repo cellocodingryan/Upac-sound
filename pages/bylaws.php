@@ -1,5 +1,8 @@
-<object data="../pdf_files/bylaws.pdf" type="application/pdf" width="100%" height="100%">
-    <p>It appears you don't have a PDF plugin for this browser.
-        No biggie... you can <a href="myfile.pdf">click here to
-            download the PDF file.</a></p>
+<style>
+    #page__
+    {
+        overflow: hidden !important;
+    }</style>
+<object data="pdf_files/bylaws.pdf" type="application/pdf" width="100%" height="100%">
+    <p>Your browser does not support pdf plugin,  <a href="pdf_files/bylaws.pdf">Click here to view</a></p>
 </object>

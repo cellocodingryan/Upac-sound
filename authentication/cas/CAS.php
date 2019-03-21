@@ -1103,12 +1103,12 @@ class phpCAS
         // store where the authentication has been checked and the result
         self::$_PHPCAS_CLIENT->markAuthenticationCall($auth);
 
-        /*		if (!$auth) {
+        		if (!$auth) {
          phpCAS :: trace('user is not authenticated, redirecting to the CAS server');
         self::$_PHPCAS_CLIENT->forceAuthentication();
         } else {
         phpCAS :: trace('no need to authenticate (user `' . phpCAS :: getUser() . '\' is already authenticated)');
-        }*/
+        }
 
         phpCAS :: traceEnd();
         return $auth;
